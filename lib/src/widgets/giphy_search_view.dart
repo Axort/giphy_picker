@@ -63,6 +63,8 @@ class _GiphySearchViewState extends State<GiphySearchView> {
                 ),
               ),
             ),
+            Image.asset('assets/PoweredBy_200px-Black_HorizText.png',
+                package: 'giphy_picker', height: 12)
           ],
         ),
       ),
