@@ -45,7 +45,7 @@ class _GiphySearchViewState extends State<GiphySearchView> {
     return Column(children: <Widget>[
       Material(
         elevation: giphyDecorator.searchElevation,
-        color: giphyDecorator.giphyTheme.scaffoldBackgroundColor,
+        color: Colors.white,//giphyDecorator.giphyTheme.scaffoldBackgroundColor,
         child: Row(
           children: [
             if (!giphyDecorator.showAppBar) BackButton(),
@@ -55,6 +55,12 @@ class _GiphySearchViewState extends State<GiphySearchView> {
                 child: TextField(
                   controller: _textController,
                   decoration: InputDecoration(
+                    // isDense: true,
+                    suffixIcon: Image.asset(
+                          'assets/PoweredBy_200px-White_HorizText.png',
+                          package: 'giphy_picker',
+                          height: 12),
+                    suffixIconConstraints: BoxConstraints(minHeight: 12, maxHeight: 12),
                     hintText: giphy.searchText,
                   ).applyDefaults(
                     giphyDecorator.giphyTheme.inputDecorationTheme,
@@ -63,8 +69,6 @@ class _GiphySearchViewState extends State<GiphySearchView> {
                 ),
               ),
             ),
-            Image.asset('assets/PoweredBy_200px-Black_HorizText.png',
-                package: 'giphy_picker', height: 12)
           ],
         ),
       ),
